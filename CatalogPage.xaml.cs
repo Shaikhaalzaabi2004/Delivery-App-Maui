@@ -38,12 +38,15 @@ public partial class CatalogPage : ContentPage
         refreshCartQuantity();
     }
 
+<<<<<<< HEAD
     protected override void OnAppearing()
     {
         base.OnAppearing();
         refreshCartQuantity();
     }
 
+=======
+>>>>>>> origin/master
     private int getCartItemQuantity()
     {
         var count = 0;
@@ -58,7 +61,11 @@ public partial class CatalogPage : ContentPage
     {
         var cartItemTotal = getCartItemQuantity();
 
+<<<<<<< HEAD
         numberOfItems.Text = cartItemTotal.ToString() + " items";
+=======
+        numberOfItems.Text = cartItemTotal.ToString() + "items";
+>>>>>>> origin/master
     }
 
     private void addToCartBtn_Clicked(object sender, EventArgs e)

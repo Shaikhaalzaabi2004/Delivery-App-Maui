@@ -13,7 +13,11 @@ namespace DeliveryApp.Helper
     {
         ApiClient client = new ApiClient();
 
+<<<<<<< HEAD
         string url = "http://192.168.30.198:5261/api/";
+=======
+        string url = "http://10.17.106.213:5261/api/";
+>>>>>>> origin/master
 
 
         JsonSerializerOptions options = new JsonSerializerOptions() {

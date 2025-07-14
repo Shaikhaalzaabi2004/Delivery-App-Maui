@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DeliveryApp.CatalogPage"
              Title="CatalogPage">
+<<<<<<< HEAD
     <ScrollView>
         <VerticalStackLayout
          Padding="30,0"
@@ -47,4 +48,63 @@
             </StackLayout>
         </VerticalStackLayout>
     </ScrollView>
+=======
+    <VerticalStackLayout
+         Padding="30,0"
+         Spacing="25" 
+         WidthRequest="800"
+         HorizontalOptions="Center">
+
+        <Label Text="Products" FontSize="Medium" FontAttributes="Bold"/>
+
+        <HorizontalStackLayout Margin="0, 20, 0,0" HorizontalOptions="End">
+            <Image Source="cart.png" WidthRequest="80">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="cartImage" Tapped="cartImage_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label x:Name="numberOfItems"/>
+        </HorizontalStackLayout>
+
+        <StackLayout Margin="0, 20, 0,0" HorizontalOptions="Center">
+            <CollectionView ItemsSource="{Binding products}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                
+                            </Grid.RowDefinitions>
+                            <HorizontalStackLayout Grid.Column="0" Grid.Row="0">
+                                <Label Text="{Binding ProductName}"></Label>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Column="0" Grid.Row="1">
+                                <Label Text="{Binding Description}"></Label>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Column="2" >
+                                <Label Text="{Binding Price}"></Label>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Column="3" >
+                                <Image Source="{Binding ImageUrl}"  WidthRequest="100"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Column="4">
+                                <Button x:Name="addToCartBtn" Text="Add to Cart" Clicked="addToCartBtn_Clicked"></Button>
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </VerticalStackLayout>
+>>>>>>> origin/master
 </ContentPage>

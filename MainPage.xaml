@@ -6,6 +6,7 @@
     <VerticalStackLayout
             Padding="30,0"
             Spacing="25"
+<<<<<<< HEAD
             WidthRequest="400"
             HorizontalOptions="Center">
         <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 20">
@@ -18,6 +19,20 @@
         </HorizontalStackLayout>
         <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 20">
             <Button Text="Login" x:Name="loginBtn" Clicked="loginBtn_Clicked" WidthRequest="120"/>
+=======
+            WidthRequest="800"
+            HorizontalOptions="Center">
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 20">
+            <Label Text="Email:" WidthRequest="150"/>
+            <Entry x:Name="emailEntry" WidthRequest="200"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 20">
+            <Label Text="Password:" WidthRequest="150"/>
+            <Entry x:Name="passEntry" IsPassword="True" WidthRequest="200"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 20">
+            <Button Text="Login" x:Name="loginBtn" Clicked="loginBtn_Clicked"/>
+>>>>>>> origin/master
         </HorizontalStackLayout>
         <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 20">
             <Label Text="Create Account" TextDecorations="Underline" TextColor="Blue">

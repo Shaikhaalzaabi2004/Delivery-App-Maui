@@ -8,6 +8,7 @@
     Padding="30,0"
     Spacing="25" 
     WidthRequest="800"
+<<<<<<< HEAD
     HorizontalOptions="Center"
     Margin="0, 30, 0, 0">
         <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 10">
@@ -29,6 +30,28 @@
         <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 10">
             <Button Text="Create Account" x:Name="createAccountBtn" Clicked="createAccountBtn_Clicked" WidthRequest="130"/>
             <Button Text="Cancel" x:Name="cancelBtn" Clicked="cancelBtn_Clicked" Margin="20, 0, 0, 0" WidthRequest="130"/>
+=======
+    HorizontalOptions="Center">
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 20">
+            <Label Text="Email:" WidthRequest="150"/>
+            <Entry x:Name="emailEntry" WidthRequest="200"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 20">
+            <Label Text="Name:" WidthRequest="150"/>
+            <Entry x:Name="nameEntry" WidthRequest="200"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 20">
+            <Label Text="Password:" WidthRequest="150"/>
+            <Entry x:Name="passEntry" IsPassword="True" WidthRequest="200"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 20">
+            <Label Text="Confirm Password:" WidthRequest="150"/>
+            <Entry x:Name="confirmEntry" IsPassword="True" WidthRequest="200"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 20">
+            <Button Text="Create Account" x:Name="createAccountBtn" Clicked="createAccountBtn_Clicked"/>
+            <Button Text="Cancel" x:Name="cancelBtn" Clicked="cancelBtn_Clicked" Margin="20, 0, 0, 0"/>
+>>>>>>> origin/master
         </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

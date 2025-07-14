@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DeliveryApp.CartPage"
              Title="CartPage">
+<<<<<<< HEAD
     <VerticalStackLayout Padding="10" HorizontalOptions="FillAndExpand">
         <StackLayout Margin="0,20,0,0" HorizontalOptions="FillAndExpand">
             <CollectionView ItemsSource="{Binding cart}" HorizontalOptions="FillAndExpand">
@@ -28,11 +29,54 @@
                                 </HorizontalStackLayout>
                             </VerticalStackLayout>
                         </Frame>
+=======
+    <VerticalStackLayout
+        WidthRequest="600"
+        HorizontalOptions="Center">
+        <StackLayout Margin="0, 20, 0,0" HorizontalOptions="Center">
+            <CollectionView ItemsSource="{Binding cart}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+
+                            </Grid.RowDefinitions>
+                            <HorizontalStackLayout Grid.Column="0" Grid.Row="0">
+                                <Label Text="{Binding ProductName}"></Label>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Column="0" Grid.Row="1">
+                                <Label Text="{Binding Quantity, StringFormat='Quantity: {0}'}"></Label>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Column="2" >
+                                <Label Text="{Binding PricePerProduct}"></Label>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Column="3" >
+                                <Button Text="-" Clicked="Button_Clicked" Margin="0,0,10,0"/>
+                                <Label Text="{Binding Quantity}"/>
+                                <Button Text="+" Clicked="Button_Clicked_1" Margin="10, 0, 0, 0"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Column="4">
+                                <Button x:Name="removeBtn" Text="Remove" Clicked="removeBtn_Clicked"></Button>
+                            </HorizontalStackLayout>
+                        </Grid>
+>>>>>>> origin/master
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </StackLayout>
 
+<<<<<<< HEAD
         <StackLayout Margin="0, 20, 0, 0" HorizontalOptions="FillAndExpand" Padding="10">
             <Label x:Name="summaryText" FontAttributes="Bold" FontSize="16" />
         </StackLayout>
@@ -40,5 +84,16 @@
         <StackLayout Margin="0, 20, 0, 0" HorizontalOptions="Center">
             <Button Text="Checkout" x:Name="checkoutBtn" Clicked="checkoutBtn_Clicked" WidthRequest="150" />
         </StackLayout>
+=======
+        <StackLayout Margin="0, 20, 0,0" HorizontalOptions="Start">
+            <Label x:Name="summaryText"/>
+        </StackLayout>
+        
+        <StackLayout Margin="0, 20, 0,0" HorizontalOptions="Center">
+            <Button Text="Checkout" x:Name="checkoutBtn" Clicked="checkoutBtn_Clicked"/>
+        </StackLayout>
+        
+        
+>>>>>>> origin/master
     </VerticalStackLayout>
 </ContentPage>
