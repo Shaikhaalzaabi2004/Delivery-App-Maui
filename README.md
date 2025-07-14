@@ -49,6 +49,10 @@ Follow the backend setup instructions in that repository and ensure the API is r
 > To connect the app to your backend API, update the IP address in the `ApiRequests.cs` file located in the `Helper` folder.  
 > Set the IP to match your API server's address before running the app.
 
+## Powered by
+
+SHAIKHA ALZAABI
+
 ## License
 
 MIT
