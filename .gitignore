@@ -1,0 +1,86 @@
+# .NET MAUI & Visual Studio
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+*.dbmdl
+*.pdb
+*.cache
+*.log
+*.vspscc
+*.vssscc
+*.ncb
+*.aps
+*.opensdf
+*.sdf
+*.ipch
+*.psess
+*.vsp
+*.vsix
+*.docstates
+*.pidb
+*.svclog
+*.ide
+*.orig
+*.rej
+*.dll
+*.exe
+*.app
+*.apk
+*.ipa
+*.xcuserstate
+*.DS_Store
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+
+# Xamarin/MAUI specific
+*.apk
+*.ap_
+*.aab
+*.ipa
+*.app
+*.xcarchive
+*.xcuserstate
+*.xcworkspace
+*.xcodeproj
+*.plist
+*.entitlements
+*.mobileprovision
+*.dsym
+*.dSYM
+*.dSYM.zip
+*.dSYM.tar.gz
+
+# MacOS
+*.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Rider
+.idea/
+*.sln.iml
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Others
+*.swp
+*.bak
+*.tmp
+*.temp

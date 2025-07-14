@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliveryApp.CheckoutPage"
+             Title="CheckoutPage">
+    <VerticalStackLayout
+    WidthRequest="600"
+    HorizontalOptions="Center">
+        <StackLayout Margin="0, 20, 0,0" HorizontalOptions="Center">
+            <Label Text="Review Cart: " FontSize="Medium" FontAttributes="Bold" TextDecorations="Underline" Margin="0,0,0,20"/>
+            
+            <CollectionView ItemsSource="{Binding cart}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+
+                            <HorizontalStackLayout Grid.Column="0">
+                                <Label Text="{Binding ProductName}"></Label>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Column="1">
+                                <Label Text="{Binding Quantity, StringFormat='Quantity: {0}'}"></Label>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Column="2" >
+                                <Label Text="{Binding PricePerProduct, StringFormat='Price: {0}' }"></Label>
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label x:Name="summaryText" TextDecorations="Underline" FontSize="Medium" Margin="0, 20, 0, 0"/>
+
+        </StackLayout>
+
+        <StackLayout Margin="0, 20, 0,0" HorizontalOptions="Start">
+            <HorizontalStackLayout Margin="0, 10, 0, 10">
+                <Label Text="Address:" WidthRequest="150"/>
+                <Entry x:Name="addressEntry" WidthRequest="200"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Margin="0, 10, 0, 10">
+                <Label Text="Phone Number:" WidthRequest="150"/>
+                <Entry x:Name="phoneEntry" WidthRequest="200"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Margin="0, 10, 0, 10">
+                <Label Text="Notes:" WidthRequest="150"/>
+                <Entry x:Name="notesEntry" WidthRequest="200"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Margin="0, 30, 0, 10">
+                <Button Text="Confirm Order" x:Name="confirmOrderBtn" Clicked="confirmOrderBtn_Clicked"/>
+            </HorizontalStackLayout>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
