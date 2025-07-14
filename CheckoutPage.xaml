@@ -3,32 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DeliveryApp.CheckoutPage"
              Title="CheckoutPage">
-<<<<<<< HEAD
+
     <ScrollView>
         <VerticalStackLayout Padding="15" HorizontalOptions="FillAndExpand" Spacing="20">
 
             <Label Text="Review Cart:" 
-               FontSize="Medium" 
-               FontAttributes="Bold" 
-               TextDecorations="Underline" 
-               HorizontalOptions="Center" 
-               Margin="0,0,0,10"/>
-        
+                   FontSize="Medium" 
+                   FontAttributes="Bold" 
+                   TextDecorations="Underline" 
+                   HorizontalOptions="Center" 
+                   Margin="0,0,0,10"/>
+
             <CollectionView ItemsSource="{Binding cart}" HorizontalOptions="FillAndExpand" HeightRequest="200">
-=======
-    <VerticalStackLayout
-    WidthRequest="600"
-    HorizontalOptions="Center">
-        <StackLayout Margin="0, 20, 0,0" HorizontalOptions="Center">
-            <Label Text="Review Cart: " FontSize="Medium" FontAttributes="Bold" TextDecorations="Underline" Margin="0,0,0,20"/>
-            
-            <CollectionView ItemsSource="{Binding cart}">
->>>>>>> origin/master
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10">
                             <Grid.ColumnDefinitions>
-<<<<<<< HEAD
                                 <ColumnDefinition Width="2*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
@@ -37,33 +27,15 @@
                             <Label Grid.Column="0" Text="{Binding ProductName}" FontSize="14" />
                             <Label Grid.Column="1" Text="{Binding Quantity, StringFormat='Qty: {0}'}" HorizontalTextAlignment="Center" FontSize="14" />
                             <Label Grid.Column="2" Text="{Binding PricePerProduct, StringFormat='Price: {0:C}'}" HorizontalTextAlignment="End" FontSize="14" />
-=======
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-
-                            </Grid.ColumnDefinitions>
-
-                            <HorizontalStackLayout Grid.Column="0">
-                                <Label Text="{Binding ProductName}"></Label>
-                            </HorizontalStackLayout>
-                            <HorizontalStackLayout Grid.Column="1">
-                                <Label Text="{Binding Quantity, StringFormat='Quantity: {0}'}"></Label>
-                            </HorizontalStackLayout>
-                            <HorizontalStackLayout Grid.Column="2" >
-                                <Label Text="{Binding PricePerProduct, StringFormat='Price: {0}' }"></Label>
-                            </HorizontalStackLayout>
->>>>>>> origin/master
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-<<<<<<< HEAD
             <Label x:Name="summaryText" 
-               TextDecorations="Underline" 
-               FontSize="Medium" 
-               HorizontalOptions="Start" />
+                   TextDecorations="Underline" 
+                   FontSize="Medium" 
+                   HorizontalOptions="Start" />
 
             <VerticalStackLayout Spacing="15" Margin="0, 20, 0, 0">
 
@@ -83,33 +55,8 @@
                 </HorizontalStackLayout>
 
                 <Button Text="Confirm Order" x:Name="confirmOrderBtn" Clicked="confirmOrderBtn_Clicked" HorizontalOptions="Center"/>
-
             </VerticalStackLayout>
 
         </VerticalStackLayout>
     </ScrollView>
-=======
-            <Label x:Name="summaryText" TextDecorations="Underline" FontSize="Medium" Margin="0, 20, 0, 0"/>
-
-        </StackLayout>
-
-        <StackLayout Margin="0, 20, 0,0" HorizontalOptions="Start">
-            <HorizontalStackLayout Margin="0, 10, 0, 10">
-                <Label Text="Address:" WidthRequest="150"/>
-                <Entry x:Name="addressEntry" WidthRequest="200"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Margin="0, 10, 0, 10">
-                <Label Text="Phone Number:" WidthRequest="150"/>
-                <Entry x:Name="phoneEntry" WidthRequest="200"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Margin="0, 10, 0, 10">
-                <Label Text="Notes:" WidthRequest="150"/>
-                <Entry x:Name="notesEntry" WidthRequest="200"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Margin="0, 30, 0, 10">
-                <Button Text="Confirm Order" x:Name="confirmOrderBtn" Clicked="confirmOrderBtn_Clicked"/>
-            </HorizontalStackLayout>
-        </StackLayout>
-    </VerticalStackLayout>
->>>>>>> origin/master
 </ContentPage>

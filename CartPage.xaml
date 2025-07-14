@@ -3,80 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DeliveryApp.CartPage"
              Title="CartPage">
-<<<<<<< HEAD
+
     <VerticalStackLayout Padding="10" HorizontalOptions="FillAndExpand">
+
         <StackLayout Margin="0,20,0,0" HorizontalOptions="FillAndExpand">
             <CollectionView ItemsSource="{Binding cart}" HorizontalOptions="FillAndExpand">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame Margin="5" Padding="10" BorderColor="LightGray" CornerRadius="8" HasShadow="True">
-                            
                             <VerticalStackLayout Spacing="8" HorizontalOptions="FillAndExpand">
                                 <Label Text="{Binding ProductName}" FontAttributes="Bold" FontSize="16" />
-
                                 <Label Text="{Binding Quantity, StringFormat='Quantity: {0}'}" FontSize="14" TextColor="Gray" />
-
                                 <HorizontalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Spacing="15">
                                     <Label Text="{Binding PricePerProduct, StringFormat='Price: {0:C}'}" FontSize="14" VerticalOptions="Center" />
-
                                     <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
                                         <Button Text="-" Clicked="Button_Clicked" WidthRequest="35" HeightRequest="35" />
                                         <Label Text="{Binding Quantity}" FontSize="14" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="30" HorizontalTextAlignment="Center" />
                                         <Button Text="+" Clicked="Button_Clicked_1" WidthRequest="35" HeightRequest="35" />
                                     </HorizontalStackLayout>
-
                                     <Button Text="Remove" Clicked="removeBtn_Clicked" HorizontalOptions="EndAndExpand" BackgroundColor="Tomato" TextColor="White" />
                                 </HorizontalStackLayout>
                             </VerticalStackLayout>
                         </Frame>
-=======
-    <VerticalStackLayout
-        WidthRequest="600"
-        HorizontalOptions="Center">
-        <StackLayout Margin="0, 20, 0,0" HorizontalOptions="Center">
-            <CollectionView ItemsSource="{Binding cart}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Grid.RowDefinitions>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
-
-                            </Grid.RowDefinitions>
-                            <HorizontalStackLayout Grid.Column="0" Grid.Row="0">
-                                <Label Text="{Binding ProductName}"></Label>
-                            </HorizontalStackLayout>
-                            <HorizontalStackLayout Grid.Column="0" Grid.Row="1">
-                                <Label Text="{Binding Quantity, StringFormat='Quantity: {0}'}"></Label>
-                            </HorizontalStackLayout>
-                            <HorizontalStackLayout Grid.Column="2" >
-                                <Label Text="{Binding PricePerProduct}"></Label>
-                            </HorizontalStackLayout>
-                            <HorizontalStackLayout Grid.Column="3" >
-                                <Button Text="-" Clicked="Button_Clicked" Margin="0,0,10,0"/>
-                                <Label Text="{Binding Quantity}"/>
-                                <Button Text="+" Clicked="Button_Clicked_1" Margin="10, 0, 0, 0"/>
-                            </HorizontalStackLayout>
-                            <HorizontalStackLayout Grid.Column="4">
-                                <Button x:Name="removeBtn" Text="Remove" Clicked="removeBtn_Clicked"></Button>
-                            </HorizontalStackLayout>
-                        </Grid>
->>>>>>> origin/master
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </StackLayout>
 
-<<<<<<< HEAD
         <StackLayout Margin="0, 20, 0, 0" HorizontalOptions="FillAndExpand" Padding="10">
             <Label x:Name="summaryText" FontAttributes="Bold" FontSize="16" />
         </StackLayout>
@@ -84,16 +37,6 @@
         <StackLayout Margin="0, 20, 0, 0" HorizontalOptions="Center">
             <Button Text="Checkout" x:Name="checkoutBtn" Clicked="checkoutBtn_Clicked" WidthRequest="150" />
         </StackLayout>
-=======
-        <StackLayout Margin="0, 20, 0,0" HorizontalOptions="Start">
-            <Label x:Name="summaryText"/>
-        </StackLayout>
-        
-        <StackLayout Margin="0, 20, 0,0" HorizontalOptions="Center">
-            <Button Text="Checkout" x:Name="checkoutBtn" Clicked="checkoutBtn_Clicked"/>
-        </StackLayout>
-        
-        
->>>>>>> origin/master
+
     </VerticalStackLayout>
 </ContentPage>

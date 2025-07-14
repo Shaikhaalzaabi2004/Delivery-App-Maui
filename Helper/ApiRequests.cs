@@ -13,14 +13,10 @@ namespace DeliveryApp.Helper
     {
         ApiClient client = new ApiClient();
 
-<<<<<<< HEAD
         string url = "http://192.168.30.198:5261/api/";
-=======
-        string url = "http://10.17.106.213:5261/api/";
->>>>>>> origin/master
 
-
-        JsonSerializerOptions options = new JsonSerializerOptions() {
+        JsonSerializerOptions options = new JsonSerializerOptions()
+        {
             PropertyNameCaseInsensitive = true,
         };
 
@@ -29,7 +25,8 @@ namespace DeliveryApp.Helper
             var fullUrl = url + "users/login";
             var result = await client.httpClient.PostAsJsonAsync(fullUrl, loginRequest);
 
-            if (result.IsSuccessStatusCode) {
+            if (result.IsSuccessStatusCode)
+            {
                 var user = await result.Content.ReadFromJsonAsync<User>(options);
                 return user;
             }
@@ -38,12 +35,14 @@ namespace DeliveryApp.Helper
                 return new User();
             }
         }
+
         public async Task<User> registerResult(User userToRegister)
         {
             var fullUrl = url + "users/register";
             var result = await client.httpClient.PostAsJsonAsync(fullUrl, userToRegister);
 
-            if (result.IsSuccessStatusCode) {
+            if (result.IsSuccessStatusCode)
+            {
                 var user = await result.Content.ReadFromJsonAsync<User>(options);
                 return user;
             }
@@ -58,7 +57,8 @@ namespace DeliveryApp.Helper
             var fullUrl = url + "products";
             var products = await client.httpClient.GetFromJsonAsync<List<Product>>(fullUrl);
 
-            if (products.Count != 0) {
+            if (products.Count != 0)
+            {
                 return products;
             }
             else
@@ -72,7 +72,8 @@ namespace DeliveryApp.Helper
             var fullUrl = url + "orders";
             var responseMessage = await client.httpClient.PostAsJsonAsync(fullUrl, orderToPlace);
 
-            if (responseMessage.IsSuccessStatusCode) {
+            if (responseMessage.IsSuccessStatusCode)
+            {
                 return true;
             }
             else
@@ -80,7 +81,5 @@ namespace DeliveryApp.Helper
                 return false;
             }
         }
-
-
     }
 }

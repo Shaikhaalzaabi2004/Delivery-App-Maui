@@ -7,22 +7,21 @@ namespace DeliveryApp;
 
 public partial class CatalogPage : ContentPage
 {
-	CatalogViewModel catalogViewModel = new CatalogViewModel();
-	ObservableCollection<Product> localCart = new ObservableCollection<Product>();
-	User currentuser = new User();
-	public CatalogPage()
-	{
-		InitializeComponent();
+    CatalogViewModel catalogViewModel = new CatalogViewModel();
+    ObservableCollection<Product> localCart = new ObservableCollection<Product>();
+    User currentuser = new User();
 
-		BindingContext = catalogViewModel;
+    public CatalogPage()
+    {
+        InitializeComponent();
+        BindingContext = catalogViewModel;
 
+        string currentUserJson = Preferences.Get("@currentUser", string.Empty);
 
-		string currentUserJson = Preferences.Get("@currentUser", string.Empty);
-
-		if (!string.IsNullOrEmpty(currentUserJson))
-		{
-			currentuser = JsonSerializer.Deserialize<User>(currentUserJson);
-		}
+        if (!string.IsNullOrEmpty(currentUserJson))
+        {
+            currentuser = JsonSerializer.Deserialize<User>(currentUserJson);
+        }
 
         var jsonCart = Preferences.Get($"{currentuser.UserId}_cart", string.Empty);
 
@@ -38,21 +37,18 @@ public partial class CatalogPage : ContentPage
         refreshCartQuantity();
     }
 
-<<<<<<< HEAD
     protected override void OnAppearing()
     {
         base.OnAppearing();
         refreshCartQuantity();
     }
 
-=======
->>>>>>> origin/master
     private int getCartItemQuantity()
     {
         var count = 0;
         foreach (var item in localCart)
         {
-            count = count + item.Quantity;
+            count += item.Quantity;
         }
         return count;
     }
@@ -60,24 +56,17 @@ public partial class CatalogPage : ContentPage
     private void refreshCartQuantity()
     {
         var cartItemTotal = getCartItemQuantity();
-
-<<<<<<< HEAD
         numberOfItems.Text = cartItemTotal.ToString() + " items";
-=======
-        numberOfItems.Text = cartItemTotal.ToString() + "items";
->>>>>>> origin/master
     }
 
     private void addToCartBtn_Clicked(object sender, EventArgs e)
     {
         var senderObj = sender as Button;
-
         var item = senderObj.BindingContext as Product;
 
         if (item != null)
         {
             var jsonCart = Preferences.Get($"{currentuser.UserId}_cart", string.Empty);
-
             List<Product> cartItems = new List<Product>();
 
             if (!string.IsNullOrEmpty(jsonCart))
@@ -113,7 +102,6 @@ public partial class CatalogPage : ContentPage
             Preferences.Set($"{currentuser.UserId}_cart", cartSerialized);
 
             DisplayAlert("Success", "Item added to cart", "Return");
-
             refreshCartQuantity();
         }
         else
@@ -122,9 +110,8 @@ public partial class CatalogPage : ContentPage
         }
     }
 
-
     private async void cartImage_Tapped(object sender, TappedEventArgs e)
     {
-		await Shell.Current.GoToAsync("CartPage");
+        await Shell.Current.GoToAsync("CartPage");
     }
 }
