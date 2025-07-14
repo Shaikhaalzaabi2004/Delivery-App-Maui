@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliveryApp.CreateAccountPage"
+             Title="CreateAccountPage">
+    
+    <VerticalStackLayout
+    Padding="30,0"
+    Spacing="25" 
+    WidthRequest="800"
+    HorizontalOptions="Center"
+    Margin="0, 30, 0, 0">
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 10">
+            <Label Text="Email:" WidthRequest="130" VerticalOptions="Center"/>
+            <Entry x:Name="emailEntry" WidthRequest="150"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 10">
+            <Label Text="Name:" WidthRequest="130" VerticalOptions="Center"/>
+            <Entry x:Name="nameEntry" WidthRequest="150"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 10">
+            <Label Text="Password:" WidthRequest="130" VerticalOptions="Center"/>
+            <Entry x:Name="passEntry" IsPassword="True" WidthRequest="150"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 30">
+            <Label Text="Confirm Password:" WidthRequest="130" VerticalOptions="Center"/>
+            <Entry x:Name="confirmEntry" IsPassword="True" WidthRequest="150"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 10">
+            <Button Text="Create Account" x:Name="createAccountBtn" Clicked="createAccountBtn_Clicked" WidthRequest="130"/>
+            <Button Text="Cancel" x:Name="cancelBtn" Clicked="cancelBtn_Clicked" Margin="20, 0, 0, 0" WidthRequest="130"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

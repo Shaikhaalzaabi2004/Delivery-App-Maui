@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeliveryApp.CheckoutPage"
+             Title="CheckoutPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="15" HorizontalOptions="FillAndExpand" Spacing="20">
+
+            <Label Text="Review Cart:" 
+               FontSize="Medium" 
+               FontAttributes="Bold" 
+               TextDecorations="Underline" 
+               HorizontalOptions="Center" 
+               Margin="0,0,0,10"/>
+        
+            <CollectionView ItemsSource="{Binding cart}" HorizontalOptions="FillAndExpand" HeightRequest="200">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Text="{Binding ProductName}" FontSize="14" />
+                            <Label Grid.Column="1" Text="{Binding Quantity, StringFormat='Qty: {0}'}" HorizontalTextAlignment="Center" FontSize="14" />
+                            <Label Grid.Column="2" Text="{Binding PricePerProduct, StringFormat='Price: {0:C}'}" HorizontalTextAlignment="End" FontSize="14" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label x:Name="summaryText" 
+               TextDecorations="Underline" 
+               FontSize="Medium" 
+               HorizontalOptions="Start" />
+
+            <VerticalStackLayout Spacing="15" Margin="0, 20, 0, 0">
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="FillAndExpand">
+                    <Label Text="Address:" VerticalTextAlignment="Center" WidthRequest="100" />
+                    <Entry x:Name="addressEntry" HorizontalOptions="FillAndExpand" Placeholder="Enter your address" WidthRequest="200" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="FillAndExpand">
+                    <Label Text="Phone Number:" VerticalTextAlignment="Center" WidthRequest="100" />
+                    <Entry x:Name="phoneEntry" Keyboard="Telephone" HorizontalOptions="FillAndExpand" Placeholder="Enter phone number" WidthRequest="200" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="FillAndExpand">
+                    <Label Text="Notes:" VerticalTextAlignment="Center" WidthRequest="100" />
+                    <Entry x:Name="notesEntry" HorizontalOptions="FillAndExpand" Placeholder="Additional notes" WidthRequest="200" />
+                </HorizontalStackLayout>
+
+                <Button Text="Confirm Order" x:Name="confirmOrderBtn" Clicked="confirmOrderBtn_Clicked" HorizontalOptions="Center"/>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
